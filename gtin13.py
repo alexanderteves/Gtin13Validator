@@ -6,11 +6,11 @@ def isGtin13(gtin13):
     
     multiplier = 1
     _sum = 0
-    for i in ean[:-1]:
+    for i in gtin13[:-1]:
         _sum += int(i) * multiplier
         if multiplier == 1: multiplier = 3
         else: multiplier = 1
 
-    if(_sum % 10) == 0 and ean[12] == 0: return True
-    elif(_sum + int(ean[12])) % 10 == 0: return True
+    if(_sum % 10) == 0 and gtin13[12] == 0: return True
+    elif(_sum + int(gtin13[12])) % 10 == 0: return True
     else: return False
